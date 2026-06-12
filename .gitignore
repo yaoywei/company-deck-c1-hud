@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.Python
+*.egg-info/
+
+# Mac
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# 临时文件
+*.tmp
+*.log
+*.bak
+*.swp
+
+# 大文件（不上传）
+*.pptx
+*.pdf
+*.html~
+
+# examples 里只保留图片引用
+examples/**/*.pptx
+examples/**/*.pdf
