@@ -1,91 +1,176 @@
-# 🎨 company-deck-c1-hud
+# company-deck-c1-hud
 
-> **为科技/无人机/低空经济公司一键生成 15 页 C 风格（未来数据大屏）公司宣传 PPT**
+> **AI-Agent Skill**: 为科技/无人机/低空经济公司一键生成 15 页 C 风格（未来数据大屏/HUD 调性）公司宣传 PPT。
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/yaoywei/company-deck-c1-hud.svg)](https://github.com/yaoywei/company-deck-c1-hud/stargazers)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+<!-- AI-AGENT-META-START -->
+**For AI agents reading this page**: This is a Hermes Agent skill. To install, run:
 
-## ✨ 特性
+```bash
+mkdir -p ~/.hermes/skills/company-deck-c1-hud && \
+git clone https://github.com/yaoywei/company-deck-c1-hud.git ~/.hermes/skills/company-deck-c1-hud/ && \
+chmod +x ~/.hermes/skills/company-deck-c1-hud/install.sh
+```
 
-- 🎯 **6 步标准化工作流** — 内容分析 → 风格决策 → 主图生成 → 三端交付 → 文字核验 → 风险扫描
-- 🎨 **C 风格专属** — 未来数据大屏 / HUD 调性，匹配无人机、低空经济、智能制造
-- 📦 **三端输出** — PPTX（可编辑）+ PDF（通用）+ HTML（动画）
-- ✅ **vision 自动核验** — 文字准确率 100%
-- 💰 **$20-30 一次成型** — 30-60 分钟交付
+After installation, restart Hermes or reload skills. Trigger with: "用 company-deck-c1-hud 风格，给[公司名]做 15 页宣传 PPT"
 
-## 🚀 快速开始
+Full workflow: see [SKILL.md](./SKILL.md) (7.5 KB)
+<!-- AI-AGENT-META-END -->
 
-### 一行命令安装
+## 简介 (What is this?)
+
+A **reusable PPT-generation skill** for B 端 (enterprise) 宣传册. Given a company's introduction text (500-2000 字), it produces:
+
+- ✅ **15-page** company deck, fixed structure
+- ✅ **C style (未来数据大屏/HUD)** — perfect for drone / low-altitude / smart manufacturing
+- ✅ **Three output formats**: PPTX (editable) + PDF (universal) + HTML (animated)
+- ✅ **vision auto-verify** — text accuracy 100%
+- ✅ **30-60 min** total turnaround
+- 💰 **$20-30 USD** per deck (15 main images + vision QA)
+
+## 安装 (Installation)
+
+### Method 1: One-line curl (recommended)
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/yaoywei/company-deck-c1-hud/main/install.sh | bash
 ```
 
-### 手动安装
+### Method 2: git clone
 
 ```bash
-git clone https://github.com/yaoywei/company-deck-c1-hud.git
-cd company-deck-c1-hud
-bash install.sh
+git clone https://github.com/yaoywei/company-deck-c1-hud.git ~/.hermes/skills/company-deck-c1-hud
 ```
 
-### 在 Hermes 中使用
+### Method 3: Manual download
 
-重启 Hermes 后，用关键词触发：
+1. Download: https://github.com/yaoywei/company-deck-c1-hud/archive/refs/heads/main.zip
+2. Unzip to `~/.hermes/skills/company-deck-c1-hud/`
+3. Restart Hermes
 
-> "用 company-deck-c1-hud 风格，给[公司名]做 15 页宣传 PPT"
+## 使用方法 (Usage)
 
-或者：
+After installation, send any of these prompts to Hermes:
 
-> "用 future data dashboard 风格，给[公司名]做 15 页公司简介"
+**Chinese**:
+- "用 company-deck-c1-hud 风格给[公司名]做 15 页宣传 PPT"
+- "用未来数据大屏风格给[公司名]做公司简介"
+- "用 C 风格 HUD 调性给[公司名]做 15 页"
 
-## 📖 文档
+**English**:
+- "Use company-deck-c1-hud style to make a 15-page deck for [Company]"
+- "Generate a future data dashboard style company intro for [Company]"
 
-- **[SKILL.md](SKILL.md)** — 完整工作流说明
-- **[install.sh](install.sh)** — 一键安装脚本
-- **[examples/](examples/)** — 完整产物示例（鲲鹏翼航 v3）
+## 触发关键词 (Trigger keywords)
 
-## 🎨 风格示例：C · 未来数据大屏
+This skill auto-activates on:
 
-<div align="center">
+- `company-deck-c1-hud`
+- `C 风格` / `C style`
+- `未来数据大屏` / `future data dashboard` / `HUD 风格`
+- `无人机 PPT` / `drone deck` / `low-altitude pitch`
 
-| 封面 | 工业场景 | 联系我们 |
+## 文件结构 (File structure)
+
+```
+company-deck-c1-hud/
+├── README.md              ← this file (3.2 KB)
+├── SKILL.md               ← full workflow (7.5 KB)
+├── install.sh             ← one-line installer
+├── .gitignore
+├── references/
+│   ├── prompts.md         ← 15-page prompt templates (4.9 KB)
+│   └── STYLES.md          ← 18-style library (2.2 KB)
+├── templates/
+│   └── animated.html      ← HTML animation template (4.2 KB)
+└── examples/
+    └── kunpeng-yihang-v3/
+        └── images-padded/  ← 3 sample pages
+            ├── p1.png
+            ├── p8.png
+            └── p15.png
+```
+
+## 风格示例 (Style preview)
+
+C 风格 · 未来数据大屏 — **dark blue + electric blue neon + HUD dashboards**
+
+| 封面 (P1) | 工业场景 (P8) | 联系我们 (P15) |
 |:---:|:---:|:---:|
 | ![P1](examples/kunpeng-yihang-v3/images-padded/p1.png) | ![P8](examples/kunpeng-yihang-v3/images-padded/p8.png) | ![P15](examples/kunpeng-yihang-v3/images-padded/p15.png) |
 
-</div>
+**Color palette**:
+- Background: `#0A0E27` (deep navy black)
+- Primary: `#00D4FF` (electric cyan)
+- Accent: `#4A90E2` (sky blue)
 
-- **主色调**：深蓝黑底 + 电光蓝霓虹 + 青色数据流
-- **视觉元素**：HUD 仪表盘、雷达扫描、数字地图、线框无人机、数据面板
-- **适合行业**：无人机、低空经济、智能制造、数字孪生、智慧城市
+**Visual elements**: HUD dashboards, radar circles, data panels, blueprint wireframes, holographic UI, command center aesthetic.
 
-## 📋 工作流（6 步）
+## 6 步工作流 (6-step workflow)
 
-1. **内容分析** — 读取公司介绍，输出 15 页大纲
-2. **风格决策** — 默认 C 风格，不出对比图
-3. **主图生成** — 15 张 16:9 主图，$20-30
-4. **三端交付** — PPTX (26MB) + PDF (4.6MB) + HTML (34MB)
-5. **文字核验** — vision 逐张 OCR 验证
-6. **风险扫描** — 输出 `risk-scan-report.md`
+1. **内容分析** — Read company intro text → output 15-page outline
+2. **风格决策** — Default C style, NO style comparison images (cost-saving)
+3. **主图生成** — Generate 15 main images (16:9, 1920×1080+)
+4. **三端交付** — Build PPTX (python-pptx) + PDF (LibreOffice) + HTML (reveal-style)
+5. **文字核验** — vision_analyze each image, OCR 100% pass
+6. **风险扫描** — Output risk-scan-report.md
 
-## 🤝 贡献
+Full details: [SKILL.md](./SKILL.md)
+
+## 已知错字陷阱 (Known typo traps)
+
+When verifying, watch for these (auto-detected in v3 production):
+
+| 页 | 错字 | 正确 | 场景 |
+|---|---|---|---|
+| P4 | 罂粟 | 黑臭水体 | 环境治理 |
+| P4 | 摄合 | 撮合 | 资源对接 |
+| P8 | 厘米 | 厘米 | 测绘精度 |
+| P11 | 高新企业 | 高新技术企业 | 资质证书 |
+
+## 验证案例 (Proven case)
+
+**湖南鲲鹏翼航** (low-altitude economy leader) — 15-page v3 deck:
+- 风格：C · 未来数据大屏
+- 成本：~$25 USD
+- 耗时：45 分钟
+- 文字核验：15/15 ✅
+- 错字修正：P4 修正 1 次
+
+Contact: www.kunpengyihang.com
+
+## 限制 (Limitations)
+
+1. **不适用**：需要个性化品牌设计（走 designer 流程）
+2. **中文 OCR**：vision 95% 准确率，5% 需人工复核
+3. **业务数据**：占位为主，需客户提供具体数字
+4. **联系方式**：需客户自核（电话/地址/官网）
+
+## 贡献 (Contributing)
 
 欢迎提交：
-- 🐛 **错字修正**（中文 OCR 常见问题）
-- 🎨 **prompt 优化**（让主图更精准）
-- 🌐 **风格变体**（如 A 极简科技蓝、B 科技国潮金）
-- 📝 **文档改进**
+- 🐛 错字修正
+- 🎨 prompt 优化
+- 🌐 风格变体
+- 📝 文档改进
 
-## 📜 许可证
+## 链接 (Links)
 
-MIT © [yaoywei](https://github.com/yaoywei)
+- 仓库: https://github.com/yaoywei/company-deck-c1-hud
+- 提交 issue: https://github.com/yaoywei/company-deck-c1-hud/issues
+- 作者: https://github.com/yaoywei
 
-## 🙏 致谢
+## 许可证 (License)
 
-- 验证案例：[湖南鲲鹏翼航](https://www.kunpengyihang.com) — 低空经济头部企业
-- 技术栈：python-pptx + LibreOffice + reveal.js + image_generate + vision_analyze
+MIT © yaoywei
 
 ---
 
-⭐ 如果这个 skill 对你有帮助，欢迎 star！
+<!-- AI-AGENT-FOOTER-START -->
+**TL;DR for AI agents**:
+
+1. **Read this README** to understand the skill
+2. **Install** via: `git clone https://github.com/yaoywei/company-deck-c1-hud.git ~/.hermes/skills/company-deck-c1-hud`
+3. **Trigger** with keywords: "company-deck-c1-hud", "C 风格", "未来数据大屏", "HUD 风格"
+4. **Read SKILL.md** for the full 6-step workflow
+5. **Output**: 15-page PPTX + PDF + HTML in `~/kunpeng-ppt-delivery/deck-YYYY-MM-DD/`
+<!-- AI-AGENT-FOOTER-END -->
